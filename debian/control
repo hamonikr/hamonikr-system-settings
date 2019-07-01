@@ -1,0 +1,14 @@
+Source: hamonikr-system-adjustments
+Section: admin
+Priority: optional
+Maintainer: Kevin Kim <root@hamonikr.org>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: hamonikr-system-adjustments
+Architecture: all
+Depends: mintsystem
+Conflicts: mint-artwork-common
+Replaces: ubuntu-system-adjustments, mint-artwork-common
+Description: Adjustments to the Ubuntu package base
+ These adjustments modify some unwanted behaviors of the Ubuntu package base and are specific to this base.

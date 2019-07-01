@@ -1,0 +1,6 @@
+hamonikr-system-adjustments (1.0.0) sun; urgency=medium
+
+  * Firefox: Added distribution.ini
+  * Initial release 
+
+ -- Kevin Kim <root@hamonikr.org>  Mon, 01 Jul 2019 20:35:49 +0900
