@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: hamonikr-system-adjustments
 Architecture: all
-Depends: mintsystem
+Depends: mintsystem, plymouth-theme-hamonikr-sun-logo
 Conflicts: mint-artwork-common
 Replaces: ubuntu-system-adjustments, mint-artwork-common
 Description: Adjustments to the Ubuntu package base
