@@ -1,12 +1,5 @@
-hamonikr-system-adjustments (1.0.1) sun; urgency=medium
+hamonikr-system-adjustments (0.0.1) sun; urgency=medium
 
-  * Add dependancy plymouth-theme-hamonikr-sun-logo package
+  * first commit
 
- -- Kevin Kim <root@hamonikr.org>  Mon, 01 Jul 2019 21:57:45 +0900
-
-hamonikr-system-adjustments (1.0.0) sun; urgency=medium
-
-  * Firefox: Added distribution.ini
-  * Initial release 
-
- -- Kevin Kim <root@hamonikr.org>  Mon, 01 Jul 2019 20:35:49 +0900
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 01 Nov 2019 17:23:13 +0900

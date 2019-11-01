@@ -1,14 +1,12 @@
-Source: hamonikr-system-adjustments
-Section: admin
-Priority: optional
-Maintainer: HamoniKR <pkg@hamonikr.org>
-Build-Depends: debhelper (>= 5)
-Standards-Version: 0.0.1
-
 Package: hamonikr-system-adjustments
+Version: 0.0.1
 Architecture: all
+Maintainer: HamoniKR <pkg@hamonikr.org>
+Installed-Size: 189
 Depends: mintsystem, hamonikr-plymouth
 Conflicts: mint-artwork-common
-Replaces: ubuntu-system-adjustments, mint-artwork-common
+Replaces: mint-artwork-common, ubuntu-system-adjustments
+Section: admin
+Priority: optional
 Description: Adjustments to the Ubuntu package base
  These adjustments modify some unwanted behaviors of the Ubuntu package base and are specific to this base.
