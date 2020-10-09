@@ -1,5 +1,0 @@
-/etc/apt/apt.conf.d/00hamonikr
-/etc/default/grub.d/50_hamonikr.cfg
-/etc/systemd/system/hddtemp.service
-/etc/upstream-release/lsb-release
-/etc/xdg/autostart/hamonikr-ctrl-alt-backspace.desktop

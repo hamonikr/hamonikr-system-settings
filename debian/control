@@ -1,14 +1,17 @@
-Source: hamonikr-system-adjustments
+Source: hamonikr-system-settings
 Section: admin
 Priority: optional
-Maintainer: HamoniKR <pkg@hamonikr.org>
-Build-Depends: debhelper (>= 5)
-Standards-Version: 0.0.1
+Maintainer: Kevin Kim <root@hamonikr.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 4.1.4
 
-Package: hamonikr-system-adjustments
-Architecture: all
-Depends: mintsystem, hamonikr-plymouth
+Package: hamonikr-system-settings
+Architecture: amd64
+Depends: hamonikr-info (>> 2020.10.08) 
+Enhances: 
 Conflicts: mint-artwork-common
-Replaces: ubuntu-system-adjustments, mint-artwork-common
-Description: Adjustments to the Ubuntu package base
- These adjustments modify some unwanted behaviors of the Ubuntu package base and are specific to this base.
+Replaces: ubuntu-system-adjustments, mint-artwork-common, firefox, mintsystem
+Description: Basic HamoniKR OS Settings
+ Applies the default settings of HamoniKR Linux
+ .
+ 하모니카 리눅스의 기본 설정을 적용하는 패키지입니다.

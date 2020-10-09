@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+if which systemctl >/dev/null 2>&1
+then
+    echo "Reloading systemd"
+    systemctl enable ubuntu-system-adjustments
+    systemctl daemon-reload || true
+fi
+
+exit 0
+
+

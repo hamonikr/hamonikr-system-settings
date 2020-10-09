@@ -1,0 +1,11 @@
+[Unit]
+Description=HamoniKR system settings
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/bin/hamonikr-system-start
+ExecStop=/usr/bin/hamonikr-system-stop
+
+[Install]
+WantedBy=multi-user.target

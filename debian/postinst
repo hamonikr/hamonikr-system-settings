@@ -7,12 +7,12 @@ case "$1" in
         if which systemctl >/dev/null 2>&1
         then
             echo "Reloading systemd"
-            systemctl enable hamonikr-system-adjustments.service
+            systemctl disable ubuntu-system-adjustments
+            systemctl enable hamonikr-system-settings.service
             systemctl daemon-reload || true
-            systemctl reenable hddtemp || true
         fi
 
-        /usr/share/hamonikr-system-adjustments/systemd/start || true
+        /usr/bin/hamonikr-system-start || true
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
 
