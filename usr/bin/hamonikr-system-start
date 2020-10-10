@@ -15,7 +15,7 @@ try:
     subprocess.call(["/usr/bin/update-grub-title.py"])
 
     # Adjust firefox default setting
-    subprocess.call(["/usr/bin/update-firefox-setting.sh"])    
+    subprocess.call(["/usr/bin/update-firefox-setting"])    
 
 except:
     pass
