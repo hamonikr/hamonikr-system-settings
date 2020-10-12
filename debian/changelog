@@ -1,3 +1,9 @@
+hamonikr-system-settings (1.3.2) jin; urgency=medium
+
+  * Added dependancy base-files pkg 
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 12 Oct 2020 11:19:58 +0900
+
 hamonikr-system-settings (1.3.1) jin; urgency=medium
 
   * fixed bug into install file
