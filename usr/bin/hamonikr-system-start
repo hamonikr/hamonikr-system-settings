@@ -7,6 +7,7 @@ try:
     now = str(datetime.datetime.now())
     with open("/var/log/hamonikr-system-start.log", "w") as f:
         f.write(now)
+        # f.close()
 
     # Disable ubuntu-system-adjustments
     subprocess.call(["systemctl", "disable", "ubuntu-system-adjustments"])

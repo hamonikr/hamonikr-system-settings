@@ -1,0 +1,20 @@
+#!/bin/bash
+touch $HOME/.hamonikr/${0##*/}.log
+echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/${0##*/}.log
+
+if [ X"$1" == "Xapply" ] ; then
+    echo "Dump current settings..."
+    dconf dump / > $HOME/.hamonikr/backup_dconf
+    if [ -f "$HOME/.hamonikr/default_dconf" ] ; then        
+        echo "Execute : $HOME/.hamonikr/default_dconf"
+        bash "$HOME/.hamonikr/default_dconf"
+    fi
+fi
+
+# 이전 설정으로 복원할 때
+if [ X"$1" == "Xrestore" ] ; then
+    echo "Restore previous settings..."    
+    dconf load / < $HOME/.hamonikr/backup_dconf
+fi
+
+exit 0

@@ -1,0 +1,65 @@
+#!/bin/bash
+
+touch $HOME/.hamonikr/${0##*/}.log
+echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/${0##*/}.log
+
+# 패널 상단 배치
+# gsettings set org.cinnamon panels-enabled "['1:0:top']"
+ 
+# 패널 애플릿 배치
+gsettings set org.cinnamon enabled-applets "['panel1:left:0:menu@cinnamon.org:0', 'panel1:right:11:show-desktop@cinnamon.org:14', 'panel1:left:2:grouped-window-list@cinnamon.org:2', 'panel1:right:1:systray@cinnamon.org:3', 'panel1:right:2:notifications@cinnamon.org:4', 'panel1:right:3:printers@cinnamon.org:5', 'panel1:right:4:removable-drives@cinnamon.org:6', 'panel1:right:5:keyboard@cinnamon.org:7', 'panel1:right:6:bluetooth@cinnamon.org:8', 'panel1:right:7:network@cinnamon.org:9', 'panel1:right:8:sound@cinnamon.org:10', 'panel1:right:9:power@cinnamon.org:11', 'panel1:right:10:calendar@cinnamon.org:12', 'panel1:right:0:xrandr@cinnamon.org:13']"
+ 
+# 시스템 폰트 설정 시스템 설정 > 기본 글꼴
+gsettings set org.cinnamon.desktop.interface font-name "나눔스퀘어라운드 Regular 10"
+# 시스템 설정 > 바탕화면 글꼴
+gsettings set org.nemo.desktop font "나눔스퀘어라운드 Regular 10"
+# 시스템 설정 > 문서 글꼴
+gsettings set org.gnome.desktop.interface document-font-name "나눔스퀘어라운드 Regular 10"
+# 시스템 설정 > 고정폭 글꼴
+gsettings set org.gnome.desktop.interface monospace-font-name "나눔스퀘어라운드 Regular 10"
+# 시스템 설정 > 창제목 글꼴
+gsettings set org.cinnamon.desktop.wm.preferences titlebar-font "나눔스퀘어라운드 Bold 10"
+ 
+# 하모니카용 터미널 설정으로 반영
+CUR_PF=`gsettings get org.gnome.Terminal.ProfilesList default |  tr -d "'"`
+dconf load /org/gnome/terminal/legacy/profiles:/:${CUR_PF}/ << EOF
+[/]
+background-color='rgb(0,0,0)'
+background-transparency-percent=9
+bold-color-same-as-fg=true
+cursor-colors-set=false
+default-size-columns=95
+font='Inconsolata Medium 12'
+foreground-color='rgb(211,215,207)'
+highlight-colors-set=false
+palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='hamonikr-setting'
+EOF
+
+# 단축키
+if command -v shutter &> /dev/null ; then
+    if ! command -v fsearch &> /dev/null ; then
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Primary><Shift>p']"
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'shutter -s'
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name '특정영역 화면캡처'
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ binding "['<Primary><Alt>p']"
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ command 'shutter -w'
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ name '선택한 윈도우 화면캡처'
+        gsettings set org.cinnamon.desktop.keybindings custom-list "['custom0','custom1']"
+    else
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Primary><ALT><Shift>p']"
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'shutter -s'
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name '특정영역 화면캡처'
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ binding "['<Primary><Alt>p']"
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ command 'shutter -w'
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ name '선택한 윈도우 화면캡처'
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom2/ binding "['<Primary><Shift>f']"
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom2/ command 'fsearch'
+        gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom2/ name '데스크탑 검색'
+        gsettings set org.cinnamon.desktop.keybindings custom-list "['custom0','custom1','custom2']"
+    fi
+fi

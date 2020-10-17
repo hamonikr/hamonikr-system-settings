@@ -1,4 +1,7 @@
 #!/bin/bash
+touch /var/log/${0##*/}.log
+echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee /var/log/${0##*/}.log
+
 # update firefox default setting
 
 TARGET="/usr/lib/firefox/distribution/distribution.ini"
