@@ -1,3 +1,39 @@
+hamonikr-system-settings (1.5.6) jin; urgency=medium
+
+  * removed font in terminal setting
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 19 Oct 2020 19:04:53 +0900
+
+hamonikr-system-settings (1.5.5) jin; urgency=medium
+
+  * fixed refresh default_dconf
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 19 Oct 2020 12:11:34 +0900
+
+hamonikr-system-settings (1.5.4) jin; urgency=medium
+
+  * added trigger
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 19 Oct 2020 11:54:05 +0900
+
+hamonikr-system-settings (1.5.3) jin; urgency=medium
+
+  * fixed trigger bug
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 19 Oct 2020 11:49:39 +0900
+
+hamonikr-system-settings (1.5.2) jin; urgency=medium
+
+  * refreshed default_dconf after package update
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 19 Oct 2020 11:46:28 +0900
+
+hamonikr-system-settings (1.5.1) jin; urgency=medium
+
+  * Changed to apply once update-dconf-setting 
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 19 Oct 2020 11:26:19 +0900
+
 hamonikr-system-settings (1.5.0) jin; urgency=medium
 
   * changed prerm to postrm

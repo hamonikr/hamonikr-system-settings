@@ -2,6 +2,15 @@
 touch $HOME/.hamonikr/${0##*/}.log
 echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/${0##*/}.log
 
+file1="/etc/skel/.hamonikr/default_dconf"
+file2="$HOME/.hamonikr/default_dconf"        
+
+if [ -n "$(cmp $file1 $file2)" ] ; then
+    # printf 'The file "%s" is different from "%s"\n' "$file1" "$file2"        
+    rm -f $file2
+    cp -af $file1 $file2                  
+fi
+
 if [ X"$1" == "Xapply" ] ; then
     echo "Dump current settings..."
     dconf dump / > $HOME/.hamonikr/backup_dconf

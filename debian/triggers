@@ -1,1 +1,2 @@
 interest /etc/grub.d/10_linux
+interest /etc/skel/.hamonikr/default_dconf

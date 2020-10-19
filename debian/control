@@ -7,7 +7,7 @@ Standards-Version: 4.1.4
 
 Package: hamonikr-system-settings
 Architecture: amd64
-Depends: hamonikr-info (>> 2020.10.08), fonts-nanum, fonts-nanum-extra, fonts-inconsolata
+Depends: hamonikr-info (>> 2020.10.08), fonts-nanum, fonts-nanum-extra
 Enhances: 
 Conflicts: mint-artwork-common
 Replaces: ubuntu-system-adjustments, mint-artwork-common, firefox, mintsystem
