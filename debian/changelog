@@ -1,3 +1,9 @@
+hamonikr-system-settings (1.5.7) jin; urgency=medium
+
+  * copy file if not found $HOME/.hamonikr/default_dconf
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 19 Oct 2020 19:48:31 +0900
+
 hamonikr-system-settings (1.5.6) jin; urgency=medium
 
   * removed font in terminal setting

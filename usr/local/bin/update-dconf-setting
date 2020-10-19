@@ -5,6 +5,12 @@ echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/${0#
 file1="/etc/skel/.hamonikr/default_dconf"
 file2="$HOME/.hamonikr/default_dconf"        
 
+if [ ! -f "$files" ] ; then
+    echo "Could not found $files. Copying $file1 ..."    
+    cp -af $file1 $file2
+fi
+
+
 if [ -n "$(cmp $file1 $file2)" ] ; then
     # printf 'The file "%s" is different from "%s"\n' "$file1" "$file2"        
     rm -f $file2
