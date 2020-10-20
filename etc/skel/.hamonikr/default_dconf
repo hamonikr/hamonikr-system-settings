@@ -22,6 +22,17 @@ if [ ! -f "/home/$USER/.hamonikr/updated-dconf" ] ; then
     # 시스템 설정 > 창제목 글꼴
     gsettings set org.cinnamon.desktop.wm.preferences titlebar-font "나눔스퀘어라운드 Bold 10"
     
+    # gnome-terminal 설정
+    if [ -f "/home/$USER/.hamonikr/hamonikr-jin-terminal.dconf" ] ; then
+        dconf load /org/gnome/terminal/legacy/profiles:/:`gsettings list-recursively org.gnome.Terminal.ProfilesList | grep default | cut -d' ' -f3 | tr -d "'"`/ < /home/$USER/.hamonikr/hamonikr-jin-terminal.dconf
+    fi
+
+    # nimf 입력기 설정
+    if command -v nimf &> /dev/null
+    then
+        im-config -n nimf
+    fi
+
     # 단축키
     if command -v shutter &> /dev/null ; then
         if ! command -v fsearch &> /dev/null ; then

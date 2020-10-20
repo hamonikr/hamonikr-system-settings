@@ -1,3 +1,11 @@
+hamonikr-system-settings (1.5.8) jin; urgency=medium
+
+  * Added nimf im config in default_dconf
+  * Add new file hamonikr-jin-terminal.dconf
+   - add dependancy font package for terminal
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 20 Oct 2020 19:14:21 +0900
+
 hamonikr-system-settings (1.5.7) jin; urgency=medium
 
   * copy file if not found $HOME/.hamonikr/default_dconf

@@ -5,9 +5,17 @@ echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/${0#
 file1="/etc/skel/.hamonikr/default_dconf"
 file2="$HOME/.hamonikr/default_dconf"        
 
-if [ ! -f "$files" ] ; then
-    echo "Could not found $files. Copying $file1 ..."    
+if [ ! -f "$file2" ] ; then
+    echo "Could not found $file2. Copying $file1 ..."    
     cp -af $file1 $file2
+fi
+
+file3="/etc/skel/.hamonikr/hamonikr-jin-terminal.dconf"
+file4="$HOME/.hamonikr/hamonikr-jin-terminal.dconf"        
+
+if [ ! -f "$file4" ] ; then
+    echo "Could not found $file4. Copying $file3 ..."    
+    cp -af $file3 $file4
 fi
 
 
@@ -16,6 +24,12 @@ if [ -n "$(cmp $file1 $file2)" ] ; then
     rm -f $file2
     cp -af $file1 $file2                  
 fi
+
+if [ -n "$(cmp $file3 $file4)" ] ; then
+    rm -f $file4
+    cp -af $file3 $file4
+fi
+
 
 if [ X"$1" == "Xapply" ] ; then
     echo "Dump current settings..."
