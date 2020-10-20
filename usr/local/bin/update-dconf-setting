@@ -20,12 +20,13 @@ fi
 
 
 if [ -n "$(cmp $file1 $file2)" ] ; then
-    # printf 'The file "%s" is different from "%s"\n' "$file1" "$file2"        
+    printf 'The file "%s" is different from "%s"\n' "$file1" "$file2"        
     rm -f $file2
     cp -af $file1 $file2                  
 fi
 
 if [ -n "$(cmp $file3 $file4)" ] ; then
+    printf 'The file "%s" is different from "%s"\n' "$file3" "$file4"        
     rm -f $file4
     cp -af $file3 $file4
 fi

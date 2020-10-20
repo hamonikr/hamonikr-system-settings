@@ -3,11 +3,13 @@
 touch $HOME/.hamonikr/${0##*/}.log
 echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/${0##*/}.log
 
-if [ ! -f "/home/$USER/.hamonikr/updated-dconf" ] ; then
+if [ ! -f "/home/$USER/.hamonikr/settings-done" ] ; then
 
     # 패널 상단 배치
     # gsettings set org.cinnamon panels-enabled "['1:0:top']"
     
+    echo "update default desktop settings" | tee -a $HOME/.hamonikr/${0##*/}.log
+
     # 패널 애플릿 배치
     gsettings set org.cinnamon enabled-applets "['panel1:left:0:menu@cinnamon.org:0', 'panel1:right:11:show-desktop@cinnamon.org:14', 'panel1:left:2:grouped-window-list@cinnamon.org:2', 'panel1:right:1:systray@cinnamon.org:3', 'panel1:right:2:notifications@cinnamon.org:4', 'panel1:right:3:printers@cinnamon.org:5', 'panel1:right:4:removable-drives@cinnamon.org:6', 'panel1:right:5:keyboard@cinnamon.org:7', 'panel1:right:6:bluetooth@cinnamon.org:8', 'panel1:right:7:network@cinnamon.org:9', 'panel1:right:8:sound@cinnamon.org:10', 'panel1:right:9:power@cinnamon.org:11', 'panel1:right:10:calendar@cinnamon.org:12', 'panel1:right:0:xrandr@cinnamon.org:13']"
     
@@ -24,18 +26,21 @@ if [ ! -f "/home/$USER/.hamonikr/updated-dconf" ] ; then
     
     # gnome-terminal 설정
     if [ -f "/home/$USER/.hamonikr/hamonikr-jin-terminal.dconf" ] ; then
+        echo "update default terminal settings"  | tee -a $HOME/.hamonikr/${0##*/}.log
         dconf load /org/gnome/terminal/legacy/profiles:/:`gsettings list-recursively org.gnome.Terminal.ProfilesList | grep default | cut -d' ' -f3 | tr -d "'"`/ < /home/$USER/.hamonikr/hamonikr-jin-terminal.dconf
     fi
 
     # nimf 입력기 설정
     if command -v nimf &> /dev/null
     then
+        echo "update default nimf settings"  | tee -a $HOME/.hamonikr/${0##*/}.log    
         im-config -n nimf
     fi
 
     # 단축키
     if command -v shutter &> /dev/null ; then
         if ! command -v fsearch &> /dev/null ; then
+            echo "update default keyboard shortcut settings for shutter"  | tee -a $HOME/.hamonikr/${0##*/}.log        
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Primary><Shift>p']"
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'shutter -s'
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name '특정영역 화면캡처'
@@ -44,6 +49,7 @@ if [ ! -f "/home/$USER/.hamonikr/updated-dconf" ] ; then
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ name '선택한 윈도우 화면캡처'
             gsettings set org.cinnamon.desktop.keybindings custom-list "['custom0','custom1']"
         else
+            echo "update default keyboard shortcut settings for shutter and fsearch"  | tee -a $HOME/.hamonikr/${0##*/}.log                
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Primary><ALT><Shift>p']"
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'shutter -s'
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name '특정영역 화면캡처'
@@ -57,5 +63,6 @@ if [ ! -f "/home/$USER/.hamonikr/updated-dconf" ] ; then
         fi
     fi
 
-    touch /home/$USER/.hamonikr/updated-dconf
+    echo "created settins-done file"  | tee -a $HOME/.hamonikr/${0##*/}.log        
+    touch /home/$USER/.hamonikr/settings-done
 fi
