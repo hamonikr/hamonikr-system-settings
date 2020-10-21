@@ -1,3 +1,9 @@
+hamonikr-system-settings (1.5.9) jin; urgency=medium
+
+  * Added default hamonikr logo menu icon
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 21 Oct 2020 10:38:45 +0900
+
 hamonikr-system-settings (1.5.8) jin; urgency=medium
 
   * Added nimf im config in default_dconf
