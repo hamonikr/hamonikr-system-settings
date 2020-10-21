@@ -1,3 +1,9 @@
+hamonikr-system-settings (1.6.0) jin; urgency=medium
+
+  * fixed bug in default_dconf file
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 21 Oct 2020 10:49:01 +0900
+
 hamonikr-system-settings (1.5.9) jin; urgency=medium
 
   * Added default hamonikr logo menu icon
