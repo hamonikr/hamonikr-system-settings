@@ -10,7 +10,7 @@ Architecture: all
 Depends: hamonikr-info (>> 2020.10.08), fonts-nanum, fonts-nanum-extra, fonts-inconsolata
 Enhances: 
 Conflicts: mint-artwork-common
-Replaces: ubuntu-system-adjustments, mint-artwork-common, firefox, mintsystem, cinnamon-l10n
+Replaces: ubuntu-system-adjustments, mint-artwork-common, firefox, mintsystem, cinnamon-l10n, cinnamon-common
 Description: Basic HamoniKR OS Settings
  Applies the default settings of HamoniKR Linux
  .
