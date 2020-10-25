@@ -17,8 +17,26 @@ if [ ! -f "/home/$USER/.hamonikr/settings-done" ] ; then
     echo "update default desktop settings" | tee -a $HOME/.hamonikr/${0##*/}.log
 
     # 패널 애플릿 배치
-    gsettings set org.cinnamon enabled-applets "['panel1:left:0:menu@cinnamon.org:0', 'panel1:right:11:show-desktop@cinnamon.org:14', 'panel1:left:2:grouped-window-list@cinnamon.org:2', 'panel1:right:1:systray@cinnamon.org:3', 'panel1:right:2:notifications@cinnamon.org:4', 'panel1:right:3:printers@cinnamon.org:5', 'panel1:right:4:removable-drives@cinnamon.org:6', 'panel1:right:5:keyboard@cinnamon.org:7', 'panel1:right:6:bluetooth@cinnamon.org:8', 'panel1:right:7:network@cinnamon.org:9', 'panel1:right:8:sound@cinnamon.org:10', 'panel1:right:9:power@cinnamon.org:11', 'panel1:right:10:calendar@cinnamon.org:12', 'panel1:right:0:xrandr@cinnamon.org:13']"
-    
+    gsettings set org.cinnamon enabled-applets "['panel1:left:0:menu@cinnamon.org:0', 
+    'panel1:left:1:grouped-window-list@cinnamon.org:1', 
+    'panel1:right:0:scale@cinnamon.org:2', 
+    'panel1:right:1:expo@cinnamon.org:3', 
+    'panel1:right:2:xrandr@cinnamon.org:4', 
+    'panel1:right:3:systray@cinnamon.org:5', 
+    'panel1:right:4:notifications@cinnamon.org:6', 
+    'panel1:right:5:printers@cinnamon.org:7', 
+    'panel1:right:6:removable-drives@cinnamon.org:8', 
+    'panel1:right:7:keyboard@cinnamon.org:9', 
+    'panel1:right:8:bluetooth@cinnamon.org:10', 
+    'panel1:right:9:network@cinnamon.org:11', 
+    'panel1:right:10:sound@cinnamon.org:12', 
+    'panel1:right:11:power@cinnamon.org:13', 
+    'panel1:right:12:calendar@cinnamon.org:14',
+    'panel1:right:13:weather@mockturtl:15', 
+    'panel1:right:14:show-desktop@cinnamon.org:16', 
+    'panel1:right:15:user@cinnamon.org:17'
+    ]"
+
     # 시스템 폰트 설정 시스템 설정 > 기본 글꼴
     gsettings set org.cinnamon.desktop.interface font-name "나눔스퀘어라운드 Regular 10"
     # 시스템 설정 > 바탕화면 글꼴
@@ -68,6 +86,11 @@ if [ ! -f "/home/$USER/.hamonikr/settings-done" ] ; then
             gsettings set org.cinnamon.desktop.keybindings custom-list "['custom0','custom1','custom2']"
         fi
     fi
+
+    # search provider
+    echo "update search provider settings"  | tee -a $HOME/.hamonikr/${0##*/}.log    
+    # cp -a ./google@hamonikr.org ~/.local/share/cinnamon/search_providers/
+    gsettings set org.cinnamon enabled-search-providers [\"google@hamonikr.org\"]
 
     echo "created settins-done file"  | tee -a $HOME/.hamonikr/${0##*/}.log        
     touch /home/$USER/.hamonikr/settings-done

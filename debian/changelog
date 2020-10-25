@@ -1,3 +1,19 @@
+hamonikr-system-settings (1.6.2) jin; urgency=medium
+
+  * update search provider settings
+  * Added default applets and settings
+   - expo, scale, user, xrandr
+  * update gnome-terminal profile
+
+ -- HamoniKR <pkg@hamonikr.org>  Sun, 25 Oct 2020 14:58:32 +0900
+
+hamonikr-system-settings (1.6.1) jin; urgency=medium
+
+  * Fixed bug in cinnamon.mo for calendar@cinnamon applet
+   - %A, %B %-e, %Y to %Y년 %m월 %d일 %A
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 21 Oct 2020 12:49:01 +0900
+
 hamonikr-system-settings (1.6.0) jin; urgency=medium
 
   * fixed bug in default_dconf file
