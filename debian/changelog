@@ -1,3 +1,9 @@
+hamonikr-system-settings (1.6.7) jin; urgency=medium
+
+  * remove plank dock items
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 28 Oct 2020 17:38:32 +0900
+
 hamonikr-system-settings (1.6.6) jin; urgency=medium
 
   * Add Albert launcher settings
