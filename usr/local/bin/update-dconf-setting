@@ -44,7 +44,9 @@ fi
 # 이전 설정으로 복원할 때
 if [ X"$1" == "Xrestore" ] ; then
     echo "Restore previous settings..."    
-    dconf load / < $HOME/.hamonikr/backup_dconf
+    RUID=$(who | awk 'FNR == 1 {print $1}')
+    RUSER_UID=$(id -u ${RUID})
+    dconf load / < /home/${RUID}/.hamonikr/backup_dconf
 fi
 
 exit 0
