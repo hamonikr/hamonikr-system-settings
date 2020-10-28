@@ -31,7 +31,6 @@ if [ -n "$(cmp $file3 $file4)" ] ; then
     cp -af $file3 $file4
 fi
 
-
 if [ X"$1" == "Xapply" ] ; then
     echo "Dump current settings..."
     dconf dump / > $HOME/.hamonikr/backup_dconf
