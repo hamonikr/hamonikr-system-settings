@@ -121,7 +121,7 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
 
     # search provider
     echo "update search provider settings"  | tee -a $HOME/.hamonikr/${0##*/}.log    
-    # cp -a ./google@hamonikr.org ~/.local/share/cinnamon/search_providers/
+    cp -a /usr/share/cinnamon/search_providers/google@hamonikr.org $HOME/.local/share/cinnamon/search_providers/google@hamonikr.org
     gsettings set org.cinnamon enabled-search-providers [\"google@hamonikr.org\"]
 
     echo "created settins-done file"  | tee -a $HOME/.hamonikr/${0##*/}.log        
