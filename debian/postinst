@@ -4,6 +4,11 @@ set -e
 
 case "$1" in
     configure|triggered)
+        if [ -f "/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title" ] ; then
+            sed -i 's|/etc/linuxmint/info|/etc/hamonikr/info|g' /usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title || true
+            sed -i 's|grub_title = "Linux Mint"|grub_title = "HamoniKR"|g' /usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title || true           
+        fi
+        
         if which systemctl >/dev/null 2>&1
         then
             echo "Reloading systemd"

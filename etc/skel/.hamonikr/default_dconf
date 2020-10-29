@@ -71,6 +71,8 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
     gsettings set org.gnome.desktop.interface document-font-name '나눔스퀘어라운드 Regular 10'    
     gsettings set org.cinnamon.desktop.wm.preferences titlebar-font '나눔스퀘어라운드 Bold 10'
     gsettings set org.gnome.desktop.interface monospace-font-name '나눔스퀘어라운드 Regular 10'
+    gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono Regular 13'
+    gsettings set org.gnome.meld custom-font 'Ubuntu Mono Regular, 13'    
 
     # 바탕화면, greeter 배경화면
     gsettings set org.cinnamon.desktop.background picture-uri "file:////usr/share/backgrounds/hamonikr/default_background.jpg"

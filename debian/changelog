@@ -1,3 +1,10 @@
+hamonikr-system-settings (1.6.8) jin; urgency=medium
+
+  * replace OS text in adjust-grub-title
+   - /usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 28 Oct 2020 17:38:32 +0900
+
 hamonikr-system-settings (1.6.7) jin; urgency=medium
 
   * remove plank dock items
