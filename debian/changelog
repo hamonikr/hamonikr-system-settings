@@ -1,3 +1,12 @@
+hamonikr-system-settings (1.7.1) jin; urgency=medium
+
+  * Korean translate for warpinator
+  * Update warpinator desktop file
+  * Korean translate for drawing
+  * Update drawing desktop file  
+
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 30 Oct 2020 17:59:25 +0900
+
 hamonikr-system-settings (1.7.0) jin; urgency=medium
 
   * Korean translate for celluloid.mo
