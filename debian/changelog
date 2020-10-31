@@ -1,3 +1,9 @@
+hamonikr-system-settings (1.7.3) jin; urgency=medium
+
+  * Added update-default-browser for default program
+
+ -- HamoniKR <pkg@hamonikr.org>  Sat, 31 Oct 2020 19:01:51 +0900
+
 hamonikr-system-settings (1.7.2) jin; urgency=medium
 
   * Update Korean translate for warpinator

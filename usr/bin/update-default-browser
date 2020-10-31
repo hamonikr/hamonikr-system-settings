@@ -1,0 +1,14 @@
+#!/bin/bash
+touch /var/log/${0##*/}.log
+echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee /var/log/${0##*/}.log >/dev/null 2>&1
+
+if [ -f "/usr/share/applications/naver-whale.desktop" ] ; then
+    # Change default  web browser
+    sed -i 's/firefox.desktop/naver-whale.desktop;firefox.desktop/g' /usr/share/applications/defaults.list
+
+    # mime type update
+    sudo update-mime-database /usr/share/mime
+    
+    # application db update
+    sudo update-desktop-database /usr/share/applications
+fi

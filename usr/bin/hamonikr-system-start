@@ -18,5 +18,8 @@ try:
     # Adjust firefox default setting
     subprocess.call(["/usr/bin/update-firefox-setting"])    
 
+    # Adjust firefox default setting
+    subprocess.call(["/usr/bin/update-default-browser"])     
+
 except:
     pass
