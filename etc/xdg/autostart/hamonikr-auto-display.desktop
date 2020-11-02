@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Screen setting
+Comment=Auto Desktop Screen Settings
+Exec=auto-display-setup
+Terminal=false
+Type=Application
+StartupNotify=false

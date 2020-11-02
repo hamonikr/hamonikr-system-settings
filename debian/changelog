@@ -1,3 +1,13 @@
+hamonikr-system-settings (1.7.8) jin; urgency=medium
+
+  * Added autorandr settings
+   - add dependency autorandr pkg
+   - add usr/local/bin/auto-display-setup
+   - add etc/xdg/autostart/hamonikr-auto-display.desktop
+   - add etc/lightdm/lightdm.conf.d/90-hamonikr.conf
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 02 Nov 2020 15:29:42 +0900
+
 hamonikr-system-settings (1.7.7) jin; urgency=medium
 
   * Added usr/share/plymouth dir

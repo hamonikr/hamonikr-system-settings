@@ -1,0 +1,18 @@
+#!/bin/bash
+touch /var/log/${0##*/}.log
+echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee /var/log/${0##*/}.log >/dev/null 2>&1
+
+# update lightdm setting
+# Get the Real Username
+RUID=$(who | awk 'FNR == 1 {print $1}')
+
+# Translate Real Username to Real User ID
+RUSER_UID=$(id -u ${RUID})
+
+if [[ -f "/home/${RUID}/.hamonikr/display-setup" ]] && [[ -f "/etc/lightdm/lightdm.conf.d/90-hamonikr.conf" ]] ; then
+
+    sed -i '/display-setup-script*/d' /etc/lightdm/lightdm.conf.d/90-hamonikr.conf
+    echo "display-setup-script=/home/${RUID}/.hamonikr/display-setup" | tee -a "/etc/lightdm/lightdm.conf.d/90-hamonikr.conf"
+
+fi
+

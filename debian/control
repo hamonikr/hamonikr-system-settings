@@ -7,7 +7,7 @@ Standards-Version: 4.1.4
 
 Package: hamonikr-system-settings
 Architecture: all
-Depends: hamonikr-info (>> 2020.10.08), fonts-noto-cjk-extra, fonts-inconsolata, albert
+Depends: hamonikr-info (>> 2020.10.08), fonts-noto-cjk-extra, fonts-inconsolata, albert, autorandr
 Enhances: 
 Conflicts: mint-artwork-common
 Replaces: ubuntu-system-adjustments, mint-artwork-common, firefox, mintsystem, cinnamon-l10n, cinnamon-common, drawing, celluloid, warpinator, mint-mirrors

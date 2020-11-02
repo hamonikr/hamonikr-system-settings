@@ -1,0 +1,27 @@
+#!/bin/bash
+touch $HOME/.hamonikr/${0##*/}.log
+echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/${0##*/}.log >/dev/null 2>&1
+
+CONF="$HOME/.autorandr/default/config"        
+
+if ! command -v autorandr &> /dev/null
+then
+    echo "autorandr could not be found"
+    exit
+else
+    autorandr --save default >/dev/null 2>&1
+fi
+
+if [ -f "$CONF" ] ; then
+
+    echo "Created display setup script"  | tee -a $HOME/.hamonikr/${0##*/}.log
+    echo "#!/bin/sh" | tee $HOME/.hamonikr/display-setup
+
+    echo "xrandr \\" | tee -a $HOME/.hamonikr/display-setup
+    while IFS= read -r line
+    do
+        echo "--$line \\" | tee -a $HOME/.hamonikr/display-setup
+    done < "$CONF"
+
+    chmod +x $HOME/.hamonikr/display-setup
+fi
