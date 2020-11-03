@@ -2,7 +2,7 @@
 touch $HOME/.hamonikr/${0##*/}.log
 echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/${0##*/}.log >/dev/null 2>&1
 
-CONF="$HOME/.autorandr/default/config"        
+CONF="$HOME/.config/autorandr/default/config"        
 
 if ! command -v autorandr &> /dev/null
 then

@@ -11,7 +11,7 @@ RUSER_UID=$(id -u ${RUID})
 
 if [ -f "/home/${RUID}/.hamonikr/display-setup" ] && [ -f "/etc/lightdm/lightdm.conf.d/90-hamonikr.conf" ] ; then
     # echo "RUID : ${RUID}" | tee -a /var/log/${0##*/}.log >/dev/null 2>&1    
-    echo "Update /etc/lightdm/lightdm.conf.d/90-hamonikr.conf" | tee -a /var/log/${0##*/}.log >/dev/null 2>&1
+    echo "Update /etc/lightdm/lightdm.conf.d/90-hamonikr.conf" | tee -a /var/log/${0##*/}.log
     sed -i '/display-setup-script*/d' /etc/lightdm/lightdm.conf.d/90-hamonikr.conf
     echo "display-setup-script=/home/${RUID}/.hamonikr/display-setup" | tee -a "/etc/lightdm/lightdm.conf.d/90-hamonikr.conf" >/dev/null 2>&1
 
