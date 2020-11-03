@@ -1,0 +1,11 @@
+#!/bin/bash
+# https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1835660
+
+touch /var/log/${0##*/}.log
+echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee /var/log/${0##*/}.log >/dev/null 2>&1
+
+if [ -f "/etc/initramfs-tools/initramfs.conf" ] ; then
+    # Change to COMPRESS=gzip
+    sed -i 's/COMPRESS=lz4/COMPRESS=gzip/g' /etc/initramfs-tools/initramfs.conf
+fi
+

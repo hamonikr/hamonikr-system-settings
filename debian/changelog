@@ -1,8 +1,16 @@
+hamonikr-system-settings (1.8.0) jin; urgency=medium
+
+  * Fixed bug while booting initramfs unpack failed
+   - Change to COMPRESS=gzip
+   - Add usr/bin/update-initramfs-conf
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 03 Nov 2020 18:00:57 +0900
+
 hamonikr-system-settings (1.7.9) jin; urgency=medium
 
   * Fixed auto-display-setup CONF path
 
- -- HamoniKR <pkg@hamonikr.org>  Tue, 03 Nov 2020 13:10:02 +0900
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 03 Nov 2020 16:30:04 +0900
 
 hamonikr-system-settings (1.7.8) jin; urgency=medium
 
