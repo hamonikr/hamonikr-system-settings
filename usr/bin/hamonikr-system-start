@@ -21,5 +21,9 @@ try:
     # Adjust firefox default setting
     subprocess.call(["/usr/bin/update-default-browser"])     
 
+    # update lightdm display script
+    # Required execute after X login, because of current user id 
+    #subprocess.call(["/usr/bin/update-lightdm-display-setting"])         
+
 except:
     pass

@@ -24,4 +24,5 @@ if [ -f "$CONF" ] ; then
     done < "$CONF"
 
     chmod +x $HOME/.hamonikr/display-setup
+    exec $HOME/.hamonikr/display-setup
 fi
