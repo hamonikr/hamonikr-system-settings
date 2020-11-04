@@ -1,3 +1,10 @@
+hamonikr-system-settings (1.8.1) jin; urgency=medium
+
+  * Added etc/xdg/autostart/change-timedatectl.desktop
+   - Change time to RTC for windows dual boot
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 04 Nov 2020 09:05:19 +0900
+
 hamonikr-system-settings (1.8.0) jin; urgency=medium
 
   * Fixed bug while booting initramfs unpack failed
