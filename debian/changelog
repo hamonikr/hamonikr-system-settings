@@ -1,3 +1,11 @@
+hamonikr-system-settings (1.8.2) jin; urgency=medium
+
+  * Added usr/bin/hamonikr-system-settings
+   - Change Kernel loglevel for slient boot
+   - deleted usr/bin/update-initramfs-conf and merge
+   
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 04 Nov 2020 12:08:57 +0900
+
 hamonikr-system-settings (1.8.1) jin; urgency=medium
 
   * Added etc/xdg/autostart/change-timedatectl.desktop

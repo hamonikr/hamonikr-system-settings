@@ -12,6 +12,9 @@ try:
     # Disable ubuntu-system-adjustments
     subprocess.call(["systemctl", "disable", "ubuntu-system-adjustments"])
 
+    # Apply Default HamoniKR System Settings
+    subprocess.call(["/usr/bin/hamonikr-system-settings"])     
+
     # Adjust Grub title
     subprocess.call(["/usr/bin/update-grub-title.py"])
 
@@ -20,9 +23,7 @@ try:
 
     # Adjust firefox default setting
     subprocess.call(["/usr/bin/update-default-browser"])     
-
-    # Change to COMPRESS=gzip
-    subprocess.call(["/usr/bin/update-initramfs-conf"])     
+    
 
 except:
     pass
