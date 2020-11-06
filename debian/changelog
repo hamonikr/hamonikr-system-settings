@@ -1,10 +1,16 @@
+hamonikr-system-settings (1.8.5) jin; urgency=medium
+
+  * update usr/bin/hamonikr-system-settings
+   - Added running user count
+   
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 06 Nov 2020 10:52:34 +0900
+
 hamonikr-system-settings (1.8.4) jin; urgency=medium
 
   * Added usr/share/cinnamon/applets/menu@cinnamon.org/applet.js
    - hide description menu
    
  -- HamoniKR <pkg@hamonikr.org>  Wed, 04 Nov 2020 18:13:54 +0900
-
 
 hamonikr-system-settings (1.8.3) jin; urgency=medium
 
