@@ -1,3 +1,11 @@
+hamonikr-system-settings (1.8.6) jin; urgency=medium
+
+  * update usr/local/bin/auto-display-setup
+   - Removed execute autorandr
+   - When use vm guest it has problem.
+   
+ -- HamoniKR <pkg@hamonikr.org>  Sat, 07 Nov 2020 16:21:37 +0900
+
 hamonikr-system-settings (1.8.5) jin; urgency=medium
 
   * update usr/bin/hamonikr-system-settings
