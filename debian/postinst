@@ -16,6 +16,8 @@ case "$1" in
             systemctl enable hamonikr-system-settings.service
             systemctl daemon-reload || true
         fi
+        
+        fc-cache -v -f || true
 
         /usr/bin/hamonikr-system-start || true
     ;;

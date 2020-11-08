@@ -7,6 +7,8 @@ if [ -f "/usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title" ] ; the
     sed -i 's|grub_title = "HamoniKR"|grub_title = "Linux Mint"|g' /usr/share/ubuntu-system-adjustments/systemd/adjust-grub-title || true           
 fi
 
+fc-cache -v -f || true
+
 if which systemctl >/dev/null 2>&1
 then
     echo "Reloading systemd"
