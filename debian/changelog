@@ -1,3 +1,10 @@
+hamonikr-system-settings (1.8.8) jin; urgency=medium
+
+  * Update etc/skel/.hamonikr/default_dconf
+   - Add case IF installed hamonikr-themes 
+   
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 10 Nov 2020 10:10:20 +0900
+
 hamonikr-system-settings (1.8.7) jin; urgency=medium
 
   * Added usr/share/fonts/truetype/droidmono/DroidSansMono.ttf
