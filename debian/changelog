@@ -1,3 +1,10 @@
+hamonikr-system-settings (1.8.9) jin; urgency=medium
+
+  * Update usr/share/applications/warpinator.desktop
+   - Change 'Icon' name
+   
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 10 Nov 2020 16:22:58 +0900
+
 hamonikr-system-settings (1.8.8) jin; urgency=medium
 
   * Update etc/skel/.hamonikr/default_dconf
