@@ -4,8 +4,10 @@ hamonikr-system-settings (1.8.9) jin; urgency=medium
    - Add nemo action for HamoniKR users
   * Add etc/ImageMagick-6/policy.xml
    - update imagemagick policy for pdf convert
+  * Update usr/share/applications/warpinator.desktop
+   - Change 'Icon' name
    
- -- HamoniKR <pkg@hamonikr.org>  Wed, 11 Nov 2020 20:23:08 +0900
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 10 Nov 2020 16:22:58 +0900
 
 hamonikr-system-settings (1.8.8) jin; urgency=medium
 
