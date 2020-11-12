@@ -1,3 +1,11 @@
+hamonikr-system-settings (1.9.6) jin; urgency=medium
+
+  * Update usr/share/applications/system-shutdown.desktop
+   - Hide desktop file in menu
+   - https://wiki.archlinux.org/index.php/desktop_entries
+  
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 12 Nov 2020 17:10:32 +0900
+
 hamonikr-system-settings (1.9.5) jin; urgency=medium
 
   * Update debian/postinst, debian/postrm

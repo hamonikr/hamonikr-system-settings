@@ -9,3 +9,5 @@ Exec=cinnamon-session-quit --power-off
 Categories=GNOME;GTK;Utility;
 Keywords=reboot;poweroff;
 Keywords[ko]=재시작;종료;reboot;poweroff;
+NoDisplay=true
+NotShowIn=gnome;cinnamon
