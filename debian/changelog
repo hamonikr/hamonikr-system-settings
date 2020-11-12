@@ -1,3 +1,10 @@
+hamonikr-system-settings (1.9.2) jin; urgency=medium
+
+  * Update usr/share/applications/io.github.celluloid_player.Celluloid.desktop
+   - Add Kerword section
+   
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 12 Nov 2020 11:05:41 +0900
+
 hamonikr-system-settings (1.9.1) jin; urgency=medium
 
   * Add usr/share/applications/system-shutdown.desktop

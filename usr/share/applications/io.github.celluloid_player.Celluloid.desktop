@@ -147,8 +147,8 @@ StartupWMClass=Celluloid
 DBusActivatable=true
 Categories=GTK;GNOME;AudioVideo;Player;Video;TV;
 # Translators: Search terms to find this application. Don't translate the semicolons! The list MUST also end with a semicolon!
-Keywords=Video;Movie;Film;Clip;Series;Player;DVD;TV;Disc;Album;Music;GNOME;mpv;
-Keywords[ko]=비디오,동영상,미디어,플레이어,TV;Video;DVD;TV;Disk;Album;mpv;
+Keywords=Celluloid;Media;Video;Movie;Film;Clip;Series;Player;DVD;TV;Disc;Album;Music;GNOME;mpv;
+Keywords[ko]=Celluloid;media;vod;mpeg;mp4;player;clip;film;비디오,동영상,미디어,플레이어,TV;Video;DVD;TV;Disk;Album;mpv;
 Keywords[bg]=Видео;Кино;Филм;Клип;Сериал;Плеър;DVD;TV;Диск, Албум;Музика;Gnome;MPV
 Keywords[cs]=Video;Snímek;Film;Klip;Seriál;Přehrávač;DVD;TV;Disk;Album;Hudba;GNOME;mpv;
 Keywords[da]=Video;Film;Klip;Serier;Afspiller;DVD;TV;Disk;Album;Musik;GNOME;mpv;
