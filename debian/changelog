@@ -1,3 +1,12 @@
+hamonikr-system-settings (1.9.0) jin; urgency=medium
+
+  * Update debian/control
+   - Add dependacy nemo-data
+  * Add usr/share/nemo/actions/setting-display.nemo_action
+   - Add context menu for display setting
+   
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 12 Nov 2020 09:14:06 +0900
+
 hamonikr-system-settings (1.8.9) jin; urgency=medium
 
   * Add usr/share/nemo/actions/* actions
