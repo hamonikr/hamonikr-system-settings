@@ -23,7 +23,8 @@ fi
 if [ -f "/usr/local/bin/hamonikr-theme-start" ] ; then
     # Update applet.js, if installed hamonikr-theme
     # show help message when mouse over on menu item
-    sed -i 's|//this.selectedAppBox.set_height(0);|this.selectedAppBox.set_height(0);|g' /usr/share/cinnamon/applets/menu@cinnamon.org/applet.js
+    echo "$(date +%Y-%m-%d_%H:%M) : Update applet.js" | tee /var/log/${0##*/}.log 
+    sed -i 's|this.selectedAppBox.set_height(0);|//this.selectedAppBox.set_height(0);|g' /usr/share/cinnamon/applets/menu@cinnamon.org/applet.js
     
 fi
 
