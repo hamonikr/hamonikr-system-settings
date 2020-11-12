@@ -17,7 +17,10 @@ case "$1" in
             systemctl daemon-reload || true
         fi
         
-        fc-cache -v -f || true
+        fc-cache -v -f  >/dev/null 2>&1 || true
+
+        update-mime-database /usr/share/mime || true
+        update-desktop-database /usr/share/applications || true
 
         /usr/bin/hamonikr-system-start || true
     ;;
