@@ -1,3 +1,10 @@
+hamonikr-system-settings (1.9.1) jin; urgency=medium
+
+  * Add usr/share/applications/system-shutdown.desktop
+   - Add shutdown desktop file
+   
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 12 Nov 2020 10:54:19 +0900
+
 hamonikr-system-settings (1.9.0) jin; urgency=medium
 
   * Update debian/control
