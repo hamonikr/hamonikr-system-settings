@@ -1,3 +1,10 @@
+hamonikr-system-settings (2.0.0) jin; urgency=medium
+
+  * Update usr/share/nemo/actions
+   - Removed actions (execute script, python)
+  
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 13 Nov 2020 09:13:58 +0900
+
 hamonikr-system-settings (1.9.9) jin; urgency=medium
 
   * Update usr/bin/hamonikr-system-settings
