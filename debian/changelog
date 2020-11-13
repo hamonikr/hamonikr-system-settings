@@ -1,3 +1,10 @@
+hamonikr-system-settings (2.0.3) jin; urgency=medium
+
+  * Update usr/share/nemo/actions dir
+   - Removed open vscode here menu
+  
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 13 Nov 2020 18:15:13 +0900
+
 hamonikr-system-settings (2.0.2) jin; urgency=medium
 
   * Update usr/bin/hamonikr-system-stop
