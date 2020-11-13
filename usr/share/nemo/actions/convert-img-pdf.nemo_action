@@ -10,5 +10,5 @@ Selection=any
 Extensions=jpg;png;gif;jpeg;
 Mimetypes=image/gif;image/jpeg;image/png;image/bmp;
 #EscapeSpaces=true
-Terminal=true
+Terminal=false
 Quote=double
