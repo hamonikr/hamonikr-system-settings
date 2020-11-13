@@ -8,7 +8,7 @@ Exec=gnome-terminal --working-directory=%P -e '/usr/bin/convert %F %e.pdf'
 Icon-Name=gnome-mime-image
 Selection=any
 Extensions=jpg;png;gif;jpeg;
-#Mimetypes=text/plain;
+Mimetypes=image/gif;image/jpeg;image/png;image/bmp;
 #EscapeSpaces=true
 Terminal=true
 Quote=double
