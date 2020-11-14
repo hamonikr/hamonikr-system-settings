@@ -1,3 +1,10 @@
+hamonikr-system-settings (2.0.4) jin; urgency=medium
+
+  * Update usr/bin/hamonikr-system-settings
+   - Apply to HamoniKR OS Info When execute cs_info.py
+  
+ -- HamoniKR <pkg@hamonikr.org>  Sat, 14 Nov 2020 21:46:17 +0900
+
 hamonikr-system-settings (2.0.3) jin; urgency=medium
 
   * Update usr/share/nemo/actions dir
@@ -7,7 +14,7 @@ hamonikr-system-settings (2.0.3) jin; urgency=medium
 
 hamonikr-system-settings (2.0.2) jin; urgency=medium
 
-  * Update usr/bin/hamonikr-system-stop
+  * Update usr/bin/hamonikr-system-stopls
    - Save current display setting when power off
   
  -- HamoniKR <pkg@hamonikr.org>  Fri, 13 Nov 2020 09:38:01 +0900
