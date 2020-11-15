@@ -1,3 +1,11 @@
+hamonikr-system-settings (2.0.4) jin; urgency=medium
+
+  * Update usr/bin/hamonikr-system-settings
+   - removed spacefm context menu when select folder
+   - fix asbru-cm font
+  
+ -- HamoniKR <pkg@hamonikr.org>  Sun, 15 Nov 2020 10:19:12 +0900
+
 hamonikr-system-settings (2.0.3) jin; urgency=medium
 
   * Update usr/share/nemo/actions dir

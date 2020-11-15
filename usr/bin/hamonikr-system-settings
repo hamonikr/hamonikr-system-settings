@@ -27,3 +27,15 @@ if [ -f "/usr/bin/curl" ] ; then
     VER="4.0"
     curl -XPOST "http://pms.invesume.com:8086/write?db=hamonikr" --data-binary "machineid,codename=$CODE,version=$VER value=\"$RD\""
 fi    
+
+#remove spacefm context menu when select folder
+if [ -f "/usr/share/applications/spacefm.desktop" ] ; then
+    sed -i '/MimeType=/d' /usr/share/applications/spacefm-folder-handler.desktop 
+    sed -i '/MimeType=/d' /usr/share/applications/spacefm-find.desktop
+    sed -i '/MimeType=/d' /usr/share/applications/spacefm.desktop 
+fi
+
+# fix asbru-cm font
+if [ -f "/opt/asbru/res/asbru.yml" ] ; then
+    sed -i 's/terminal font: Monospace 9/terminal font: Inconsolata Medium 12/g' /opt/asbru/res/asbru.yml
+fi
