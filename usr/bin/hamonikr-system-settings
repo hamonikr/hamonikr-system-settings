@@ -44,3 +44,9 @@ fi
 if [ -f "/opt/asbru/res/asbru.yml" ] ; then
     sed -i 's/terminal font: Monospace 9/terminal font: Inconsolata Medium 12/g' /opt/asbru/res/asbru.yml
 fi
+
+# hide fcitx in start menu
+if [ -f "/usr/share/applications/fcitx" ] ; then
+    echo 'NoDisplay=true' >> /usr/share/applications/fcitx.desktop
+    echo 'NoDisplay=true' >> /usr/share/applications/fcitx-configtool.desktop
+fi

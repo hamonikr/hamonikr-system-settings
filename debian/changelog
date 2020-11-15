@@ -1,3 +1,10 @@
+hamonikr-system-settings (2.0.6) jin; urgency=medium
+
+  * Change /usr/share/applications/fcitx.dektop & fcitx-configtool.desktop
+   - hide fcitx, fcitx-configtool in start menu
+  
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 16 Nov 2020 03:21:33 +0900
+
 hamonikr-system-settings (2.0.5) jin; urgency=medium
 
   * Update usr/bin/hamonikr-system-settings
