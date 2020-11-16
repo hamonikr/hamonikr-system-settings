@@ -39,9 +39,3 @@ if [ -f "/usr/share/applications/spacefm.desktop" ] ; then
     sed -i '/MimeType=/d' /usr/share/applications/spacefm-find.desktop
     sed -i '/MimeType=/d' /usr/share/applications/spacefm.desktop 
 fi
-
-# fix asbru-cm font
-if [ -f "/opt/asbru/res/asbru.yml" ] ; then
-    sed -i 's/terminal font: Monospace 9/terminal font: Inconsolata Medium 12/g' /opt/asbru/res/asbru.yml
-fi
-
