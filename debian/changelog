@@ -1,8 +1,15 @@
-hamonikr-system-settings (2.0.8) jin; urgency=medium
+hamonikr-system-settings (2.0.9) jin; urgency=medium
 
   * Update etc/skel/.hamonikr/default_dconf
    - changed pythonconsole font and size
    - fix asbru-cm font   
+  
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 16 Nov 2020 10:26:43 +0900
+
+hamonikr-system-settings (2.0.8) jin; urgency=medium
+
+  * Delete usr/bin/notepad symbolic link
+    - winehq-stable package used same file name
   
  -- HamoniKR <pkg@hamonikr.org>  Mon, 16 Nov 2020 10:26:43 +0900
 
