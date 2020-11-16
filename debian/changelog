@@ -1,3 +1,14 @@
+hamonikr-system-settings (2.0.7) jin; urgency=medium
+
+  * Update etc/skel/.hamonikr/default_dconf
+   - changed pythonconsole font and size
+  * Update usr/share/nemo/actions/convert-img-pdf.nemo_action
+   - Change Selection=any
+  * Change hamonikr-system-settings/usr/bin/hamonikr-system-settings
+   - Removed hide fcitx, fcitx-configtool in start menu
+  
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 16 Nov 2020 10:26:43 +0900
+
 hamonikr-system-settings (2.0.6) jin; urgency=medium
 
   * Change /usr/share/applications/fcitx.dektop & fcitx-configtool.desktop

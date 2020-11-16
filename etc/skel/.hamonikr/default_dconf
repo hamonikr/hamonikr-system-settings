@@ -75,7 +75,9 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
         gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans CJK KR 10'    
         gsettings set org.cinnamon.desktop.wm.preferences titlebar-font 'Noto Sans CJK KR 11'
         gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono Regular 12'
-        gsettings set org.gnome.meld custom-font 'Ubuntu Mono Regular, 12'    
+        gsettings set org.gnome.meld custom-font 'Ubuntu Mono Regular, 12'
+        gsettings set org.x.viewer.plugins.pythonconsole use-system-font false
+        gsettings set org.x.viewer.plugins.pythonconsole font 'Inconsolata Medium 9'
 
         # 바탕화면, greeter 배경화면
         gsettings set org.cinnamon.desktop.background picture-uri "file:////usr/share/backgrounds/hamonikr/default_background.jpg"
@@ -131,4 +133,6 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
 
     echo "created settins-done file"  | tee -a $HOME/.hamonikr/${0##*/}.log        
     touch /home/$USER/.hamonikr/default_dconf.done
+
+
 fi
