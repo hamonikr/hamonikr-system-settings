@@ -17,3 +17,5 @@ APT
   };
 
 };
+
+DPkg::Post-Invoke {"/usr/bin/update-lightdm-display-setting";};
