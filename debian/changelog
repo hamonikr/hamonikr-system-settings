@@ -1,10 +1,18 @@
-hamonikr-system-settings (2.1.0) jin; urgency=medium
+hamonikr-system-settings (2.1.1) jin; urgency=medium
 
   * Update etc/apt/apt.conf.d/00hamonikr
    - Add APT post hook for update-lightdm-display-setting
    - https://www.cyberciti.biz/faq/debian-ubuntu-linux-hook-a-script-command-to-apt-get-upgrade-command/
   
- -- HamoniKR <pkg@hamonikr.org>  Tue, 17 Nov 2020 14:14:12 +0900
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 17 Nov 2020 14:15:40 +0900
+
+hamonikr-system-settings (2.1.0) jin; urgency=medium
+
+  * Update etc/skel/.hamonikr/default_dconf
+   - added figlet logo setting
+   - added hamonikr community link file in Desktop
+  
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 16 Nov 2020 20:31:51 +0900
 
 hamonikr-system-settings (2.0.9) jin; urgency=medium
 
