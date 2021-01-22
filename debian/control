@@ -13,7 +13,8 @@ Depends: hamonikr-info (>> 2020.10.08),
          albert, 
          autorandr, 
          unalz, 
-         nemo-python 
+         nemo-python,
+         hamonikr-welcome
 Enhances: 
 Conflicts: mint-artwork-common
 Replaces: ubuntu-system-adjustments, 
@@ -28,7 +29,8 @@ Replaces: ubuntu-system-adjustments,
           mint-mirrors, 
           imagemagick-6-common, 
           nemo-data,
-          alzip
+          alzip,
+          hamonikr-welcome
 Description: Basic HamoniKR OS Settings
  Applies the default settings of HamoniKR Linux
  .
