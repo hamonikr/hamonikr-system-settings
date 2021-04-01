@@ -1,3 +1,13 @@
+hamonikr-system-settings (2.1.6) jin; urgency=medium
+
+  * Fix bug for nimf with hwp 2020 beta
+   - https://hamonikr.org/Free_Board/85939
+   - https://hamonikr.org/Free_Board/88075#comment_88940
+  * Fix bug for Korean charactor Input with Zoom 
+   - https://hamonikr.org/used_hamonikr/96168
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 01 Apr 2021 16:24:16 +0900
+
 hamonikr-system-settings (2.1.5) jin; urgency=medium
 
   * Added control dependancy

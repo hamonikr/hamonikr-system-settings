@@ -25,7 +25,7 @@ if [ -f "/usr/bin/curl" ] ; then
     RD=`head -c 16 /dev/urandom | md5sum | head -c 32`
     CODE="jin-live"
     VER="4.0"
-    curl -XPOST "http://pms.invesume.com:8086/write?db=hamonikr" --data-binary "machineid,codename=$CODE,version=$VER value=\"$RD\""
+    curl -XPOST "http://pms.invesume.com:8086/write?db=hamonikr" --data-binary "machineid,codename=$CODE,version=$VER value=\"$RD\"" || true
 fi    
 
 if [ -f "/usr/share/cinnamon/cinnamon-settings/modules/cs_info.py" ] ; then
@@ -39,3 +39,20 @@ if [ -f "/usr/share/applications/spacefm.desktop" ] ; then
     sed -i '/MimeType=/d' /usr/share/applications/spacefm-find.desktop
     sed -i '/MimeType=/d' /usr/share/applications/spacefm.desktop 
 fi
+
+# Fix bug for nimf with hwp 2020 beta
+if [[ -f "/opt/hnc/hoffice11/Bin/hwp" && -d "/opt/hnc/hoffice11/Bin/qt" ]] ; then
+    # https://hamonikr.org/Free_Board/85939
+    mv /opt/hnc/hoffice11/Bin/qt /opt/hnc/hoffice11/Bin/qt.bak
+fi
+if [ -f "/usr/share/applications/hoffice11-hwp.desktop" ] ; then
+    # Change locale as Korean
+    # https://hamonikr.org/Free_Board/88075#comment_88940
+    sed -i 's|Exec=/opt/hnc/hoffice11/Bin/hwp %f|Exec=/bin/bash -c "LANGUAGE=ko_KR /opt/hnc/hoffice11/Bin/hwp %f"|g' /usr/share/applications/hoffice11-hwp.desktop
+fi
+
+# Fix bug for Korean charactor Input with Zoom 
+if [[ -f "/opt/zoom/ZoomLauncher" && ! -f "/opt/zoom/platforminputcontexts/libqt5im-nimf.so" ]] ; then
+    # https://hamonikr.org/used_hamonikr/96168
+    ln -s /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libqt5im-nimf.so /opt/zoom/platforminputcontexts/libqt5im-nimf.so
+fi    
