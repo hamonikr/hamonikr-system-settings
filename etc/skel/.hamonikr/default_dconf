@@ -5,7 +5,7 @@ echo "$(date +%Y-%m-%d_%H:%M) : ${0##*/} $1 running." | tee $HOME/.hamonikr/${0#
 
 # update hamonikr default logo setting
 if [ -f "/home/$USER/.cinnamon/configs/menu@cinnamon.org/0.json" ] ; then
-    echo "update hamonikr default logo setting" | tee -a $HOME/.hamonikr/${0##*/}.log
+    echo "LOGO : Update hamonikr default logo setting" | tee -a $HOME/.hamonikr/${0##*/}.log
     sed -i 's/"value": "linuxmint-logo-ring-symbolic"/"value": "hamonikr-logo"/g' /home/$USER/.cinnamon/configs/menu@cinnamon.org/0.json
 fi
 
@@ -13,13 +13,13 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
 
     # delete cache
     if [ -d "/home/$USER/.cache" ] ; then
-        echo "Deleted cache" | tee -a $HOME/.hamonikr/${0##*/}.log
+        echo "CACHE : Deleted cache" | tee -a $HOME/.hamonikr/${0##*/}.log
         rm -rf /home/$USER/.cache/*
     fi
 
     # copy applet to user home
     if [ -d "/home/$USER/.cinnamon/configs" ] ; then
-        echo "Copy applets" | tee -a $HOME/.hamonikr/${0##*/}.log
+        echo "APPLET : Copy HamoniKR Desktop applets" | tee -a $HOME/.hamonikr/${0##*/}.log
         cp -af /usr/share/cinnamon/applets/expo@cinnamon.org /home/$USER/.cinnamon/configs/
         cp -af /usr/share/cinnamon/applets/scale@cinnamon.org /home/$USER/.cinnamon/configs/        
         cp -af /usr/share/cinnamon/applets/user@cinnamon.org /home/$USER/.cinnamon/configs/                
@@ -29,15 +29,22 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
 
     # Albert Launcher Settings
     if [ -d "/etc/skel/.config/albert" ] ; then
-        echo "copy albert launcher setting" | tee -a $HOME/.hamonikr/${0##*/}.log
-        cp -af /etc/skel/.config/albert /home/$USER/.config/
+
+        Albert_Ver=$(cat /etc/skel/.config/albert/last_used_version)
+        echo "ALBERT : Albert Version : $Albert_Ver" | tee -a $HOME/.hamonikr/${0##*/}.log
+
+        # Do not copy if latest version
+        if [ "x$Albert_Ver" = "x0.16.1" ]; then
+            echo "Copy albert launcher setting" | tee -a $HOME/.hamonikr/${0##*/}.log
+            cp -af /etc/skel/.config/albert /home/$USER/.config/
+        fi
     fi                
     
 
     if [ ! -f "/home/$USER/.hamonikr/hamonikr-theme-backup.dconf" ] ; then
         # IF installed hamonikr-themes 
 
-        echo "update default desktop settings" | tee -a $HOME/.hamonikr/${0##*/}.log        
+        echo "THEME : Update default desktop settings" | tee -a $HOME/.hamonikr/${0##*/}.log        
         # 패널 설정
         gsettings set org.cinnamon panels-enabled "['1:0:bottom']"
         gsettings set org.cinnamon panels-height "['1:38']"
@@ -89,21 +96,21 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
 
     # gnome-terminal 설정
     if [ -f "/home/$USER/.hamonikr/hamonikr-jin-terminal.dconf" ] ; then
-        echo "update default terminal settings"  | tee -a $HOME/.hamonikr/${0##*/}.log
+        echo "TERMINAL : Update default terminal settings"  | tee -a $HOME/.hamonikr/${0##*/}.log
         dconf load /org/gnome/terminal/legacy/profiles:/:`gsettings list-recursively org.gnome.Terminal.ProfilesList | grep default | cut -d' ' -f3 | tr -d "'"`/ < /home/$USER/.hamonikr/hamonikr-jin-terminal.dconf
     fi
 
     # nimf 입력기 설정
     if command -v nimf &> /dev/null
     then
-        echo "update default nimf settings"  | tee -a $HOME/.hamonikr/${0##*/}.log    
+        echo "NIMF : Update default nimf settings"  | tee -a $HOME/.hamonikr/${0##*/}.log    
         im-config -n nimf
     fi
 
     # 단축키
     if command -v shutter &> /dev/null ; then
         if ! command -v fsearch &> /dev/null ; then
-            echo "update default keyboard shortcut settings for shutter"  | tee -a $HOME/.hamonikr/${0##*/}.log        
+            echo "SHORTCUT : Update default keyboard shortcut settings for shutter"  | tee -a $HOME/.hamonikr/${0##*/}.log        
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Primary><Shift>p']"
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'shutter -s'
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name '특정영역 화면캡처'
@@ -112,7 +119,7 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ name '선택한 윈도우 화면캡처'
             gsettings set org.cinnamon.desktop.keybindings custom-list "['custom0','custom1']"
         else
-            echo "update default keyboard shortcut settings for shutter and fsearch"  | tee -a $HOME/.hamonikr/${0##*/}.log                
+            echo "SHORTCUT : Update default keyboard shortcut settings for shutter and fsearch"  | tee -a $HOME/.hamonikr/${0##*/}.log                
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Primary><ALT><Shift>p']"
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command 'shutter -s'
             gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name '특정영역 화면캡처'
@@ -127,16 +134,16 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
     fi
 
     # search provider
-    echo "update search provider settings"  | tee -a $HOME/.hamonikr/${0##*/}.log    
+    echo "SEARCH : Update search provider settings"  | tee -a $HOME/.hamonikr/${0##*/}.log    
     cp -a /usr/share/cinnamon/search_providers/google@hamonikr.org $HOME/.local/share/cinnamon/search_providers/google@hamonikr.org
     gsettings set org.cinnamon enabled-search-providers [\"google@hamonikr.org\"]
 
-    echo "created settins-done file"  | tee -a $HOME/.hamonikr/${0##*/}.log        
+    echo "LOG : Created settins-done file"  | tee -a $HOME/.hamonikr/${0##*/}.log        
     touch /home/$USER/.hamonikr/default_dconf.done
 
     # fix asbru-cm font
     if [ -f "/home/$USER/.config/asbru/asbru.yml" ] ; then
-        echo "Update asbru font seting" | tee -a $HOME/.hamonikr/${0##*/}.log
+        echo "ASBRU : Update asbru font seting" | tee -a $HOME/.hamonikr/${0##*/}.log
         sed -i 's/Monospace/Droid Sans Mono/g' /home/$USER/.config/asbru/asbru.yml
     fi
 
@@ -144,18 +151,41 @@ if [ ! -f "/home/$USER/.hamonikr/default_dconf.done" ] ; then
     if [ -f "$HOME/.bashrc" ]; then
         # if "figlet" text in .bashrc
         if [ -z "`cat $HOME/.bashrc | grep figlet`" ]; then
-            echo "Update figlet setting" | tee -a $HOME/.hamonikr/${0##*/}.log
+            echo "FIGLET : Update figlet setting" | tee -a $HOME/.hamonikr/${0##*/}.log
             echo 'figlet "$HOSTNAME"' >> $HOME/.bashrc
         fi
     fi
 
     # Desktop Community Icon
     if [ -f "/usr/share/applications/hamonikrorg.desktop" ]; then
-        echo "Update asbru font seting" | tee -a $HOME/.hamonikr/${0##*/}.log
+        echo "COMMUNITY : Copy HamoniKR Community Icon" | tee -a $HOME/.hamonikr/${0##*/}.log
         if [ -d "$HOME/Desktop" ]; then
             cp /usr/share/applications/hamonikrorg.desktop $HOME/Desktop/hamonikrorg.desktop
         else
-            cp /usr/share/applications/hamonikrorg.desktop $HOME/바탕화면/hamonikrorg.desktop
+            # Real Username
+            RUID=$(who | awk 'FNR == 1 {print $1}')
+            # Real User ID
+            RUSER_UID=$(id -u ${RUID})        
+            if [ "x${RUID}" != "xroot" ]; then
+                if [ -f "/home/${RUID}/.config/user-dirs.dirs" ]; then
+                    DT=$(sed -n -e 's|^XDG_DESKTOP_DIR="$HOME/||gp'  /home/${RUID}/.config/user-dirs.dirs | sed -n -e 's/"//gp')
+                    DT_NAME="/home/${RUID}/$DT"            
+                elif [ ! -f "/home/${RUID}/.config/user-dirs.dirs" ] && [ -f "/etc/xdg/user-dirs.defaults" ]; then
+                    source /etc/xdg/user-dirs.defaults
+                    DT_NAME="/home/${RUID}/$DESKTOP"
+                fi
+        
+                cp /usr/share/applications/hamonikrorg.desktop ${DT_NAME}/hamonikrorg.desktop
+                chmod +x ${DT_NAME}/hamonikrorg.desktop            
+                chown ${RUID}:${RUID} ${DT_NAME}/hamonikrorg.desktop
+
+            fi        
         fi
+    fi
+
+    # hamonikr-help setting
+    if [ -f "/usr/local/sbin/yelp" ]; then
+        echo "HELP : Create Shortcut for HELP" | tee -a $HOME/.hamonikr/${0##*/}.log    
+        gsettings set org.cinnamon.desktop.keybindings.media-keys help "['F1']"
     fi
 fi

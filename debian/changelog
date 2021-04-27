@@ -1,3 +1,11 @@
+hamonikr-system-settings (2.1.7) jin; urgency=medium
+
+  * Update etc/skel/.hamonikr/default_dconf
+   - Apply Desktop Name for i18n
+   - Do not copy if latest Albert version
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 27 Apr 2021 16:20:32 +0900
+
 hamonikr-system-settings (2.1.6) jin; urgency=medium
 
   * Fix bug for nimf with hwp 2020 beta
