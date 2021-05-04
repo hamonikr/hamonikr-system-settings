@@ -56,3 +56,15 @@ if [[ -f "/opt/zoom/ZoomLauncher" && ! -f "/opt/zoom/platforminputcontexts/libqt
     # https://hamonikr.org/used_hamonikr/96168
     ln -s /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libqt5im-nimf.so /opt/zoom/platforminputcontexts/libqt5im-nimf.so
 fi    
+
+# Fix stacer bug - Can't execute after upgrade
+if [ -f "/var/lib/dpkg/info/stacer.postrm" ] ; then
+    echo "removed /var/lib/dpkg/info/stacer.postrm"
+    rm -f /var/lib/dpkg/info/stacer.postrm
+fi
+# 이미 업그레이드를 해서 stacer 실행파일이 지워진 경우 재설치
+if [[ ! -f "/usr/bin/stacer" && ! -d "/usr/share/stacer" ]] ; then
+    echo "Reinstall stacer..."
+    apt install --reinstall -y -qqq stacer
+fi
+
