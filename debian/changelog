@@ -1,3 +1,11 @@
+hamonikr-system-settings (2.1.9) jin; urgency=medium
+
+  * Update usr/bin/hamonikr-system-settings
+   - remove auto install stacer for bug
+   - https://hamonikr.org/index.php?mid=hamoni_board&comment_srl=98621&document_srl=98564
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 06 May 2021 09:15:30 +0900
+
 hamonikr-system-settings (2.1.8) jin; urgency=medium
 
   * Update usr/bin/hamonikr-system-settings

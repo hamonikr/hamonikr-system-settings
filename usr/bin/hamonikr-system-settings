@@ -62,9 +62,10 @@ if [ -f "/var/lib/dpkg/info/stacer.postrm" ] ; then
     echo "removed /var/lib/dpkg/info/stacer.postrm"
     rm -f /var/lib/dpkg/info/stacer.postrm
 fi
+# bug : https://hamonikr.org/index.php?mid=hamoni_board&document_srl=98564&comment_srl=98621&rnd=98649#comment_98649
 # 이미 업그레이드를 해서 stacer 실행파일이 지워진 경우 재설치
-if [[ ! -f "/usr/bin/stacer" && ! -d "/usr/share/stacer" ]] ; then
-    echo "Reinstall stacer..."
-    apt install --reinstall -y -qqq stacer
-fi
+# if [[ ! -f "/usr/bin/stacer" && ! -d "/usr/share/stacer" ]] ; then
+#     echo "Reinstall stacer..."
+#     apt install --reinstall -y -qqq stacer
+# fi
 
