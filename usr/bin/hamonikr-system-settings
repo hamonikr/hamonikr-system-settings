@@ -69,3 +69,9 @@ fi
 #     apt install --reinstall -y -qqq stacer
 # fi
 
+# Fix autorandr bug - Can't adjust screen resolution in VM
+# https://hamonikr.org/index.php?mid=Free_Board&comment_srl=99361&document_srl=99349
+if [ -f "/etc/xdg/autostart/autorandr.desktop" ] ; then
+    echo "removed /etc/xdg/autostart/autorandr.desktop"
+    rm -f /etc/xdg/autostart/autorandr.desktop
+fi

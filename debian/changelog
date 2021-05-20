@@ -1,3 +1,11 @@
+hamonikr-system-settings (2.2.0) jin; urgency=medium
+
+  * Update usr/bin/hamonikr-system-settings
+   - remove /etc/xdg/autostart/autorandr.desktop
+   - https://hamonikr.org/index.php?mid=Free_Board&comment_srl=99361&document_srl=99349
+
+ -- HamoniKR <pkg@hamonikr.org>  Thu, 20 May 2021 14:20:11 +0900
+
 hamonikr-system-settings (2.1.9) jin; urgency=medium
 
   * Update usr/bin/hamonikr-system-settings
