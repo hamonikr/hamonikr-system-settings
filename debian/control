@@ -14,7 +14,8 @@ Depends: hamonikr-info (>> 2020.10.08),
          autorandr, 
          unalz, 
          nemo-python,
-         hamonikr-welcome
+         hamonikr-welcome,
+         hamonikr-wheelspeed
 Enhances: 
 Conflicts: mint-artwork-common
 Replaces: ubuntu-system-adjustments, 
@@ -22,10 +23,7 @@ Replaces: ubuntu-system-adjustments,
           firefox, 
           mintsystem, 
           cinnamon-l10n, 
-          cinnamon-common, 
-          drawing, 
-          celluloid, 
-          warpinator, 
+          cinnamon-common,
           mint-mirrors, 
           imagemagick-6-common, 
           nemo-data,

@@ -1,3 +1,18 @@
+hamonikr-system-settings (2.2.2) jin; urgency=medium
+
+  * Add mouse wheel speed setting package
+  * Add mouse wheel speed setting button in mouse setting
+  * Update locale cinnamon.mo
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 06 Jul 2021 15:26:30 +0900
+
+hamonikr-system-settings (2.2.1) jin; urgency=medium
+
+  * Delete celluloid.mo, drawing.mo, warpinator.mo
+  * Add celluloid, drawing, warpinatior package in hamonikr apt
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 25 May 2021 10:30:20 +0900
+
 hamonikr-system-settings (2.2.0) jin; urgency=medium
 
   * Update usr/bin/hamonikr-system-settings
