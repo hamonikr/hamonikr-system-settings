@@ -1,3 +1,9 @@
+hamonikr-system-settings (2.2.3) jin; urgency=medium
+
+  * release version up (cause err in repo)
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 06 Jul 2021 15:51:19 +0900
+
 hamonikr-system-settings (2.2.2) jin; urgency=medium
 
   * Add mouse wheel speed setting package
