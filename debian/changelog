@@ -1,3 +1,10 @@
+hamonikr-system-settings (2.2.4) jin; urgency=medium
+
+  * Add usr/share/applications/cinnamon-settings-shortcut.desktop
+   - Added shortcut setting on program menu 
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 21 Jul 2021 16:33:19 +0900
+
 hamonikr-system-settings (2.2.3) jin; urgency=medium
 
   * release version up (cause err in repo)

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Icon=input-keyboard
+Exec=cinnamon-settings keyboard -t 1
+Type=Application
+OnlyShowIn=X-Cinnamon;
+Categories=Settings;
+Name=Shortcuts Setting
+Name[ko]=단축키 설정
+Comment=Manage shortcuts
+Comment[ko]=단축키 설정
+Keywords=keyboard;shortcut;hotkey;
+Keywords[ko]=단축키;키보드;바로가기;핫키;
